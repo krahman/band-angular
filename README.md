@@ -1,4 +1,4 @@
-#Band Angular
+# Band Angular
 
 ### Steps for set up
 1. Clone this repository (https://github.com/krahman/band-angular.git).
