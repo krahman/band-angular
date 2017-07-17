@@ -1,6 +1,8 @@
 /**
  * Created by Khal on 18/7/17.
  */
+var webpack = require('webpack');
+
 module.exports = {
     context: __dirname + '/app',
     entry: './index.js',
@@ -8,6 +10,11 @@ module.exports = {
         path: __dirname + '/dist',
         filename: 'bundle.js'
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            ON_TEST: process.env.NODE_ENV === 'test'
+        })
+    ],
 
     module: {
         loaders: [
