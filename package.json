@@ -1,0 +1,41 @@
+{
+  "name": "band-angular",
+  "version": "0.0.1",
+  "description": "Play band with angularjs app",
+  "main": "app/index.js",
+  "repository": "https://github.com/krahman/band-angular.git",
+  "scripts": {
+    "start": "node node_modules/.bin/webpack-dev-server --content-base app",
+    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html"
+  },
+  "author": "Khal",
+  "devDependencies": {
+    "angular-formly": "^7.3.9",
+    "api-check": "^7.5.5",
+    "babel": "^6.3.26",
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.1",
+    "jshint": "^2.9.1-rc2",
+    "jshint-loader": "^0.8.3",
+    "nib": "^1.1.0",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.0",
+    "stylus": "^0.49.3",
+    "stylus-loader": "^1.4.2",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.7.2",
+    "webpack-core": "^0.6.8",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.0-rc.0",
+    "angular-animate": "^1.5.0-rc.0",
+    "angular-aria": "^1.5.0-rc.0",
+    "angular-material": "^1.0.1",
+    "angular-messages": "^1.5.0-rc.0",
+    "angular-ui-router": "^0.2.13"
+  }
+}
