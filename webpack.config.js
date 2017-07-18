@@ -3,11 +3,11 @@
  */
 var webpack = require('webpack');
 
-module.exports = {
+var config = {
     context: __dirname + '/app',
     entry: './index.js',
     output: {
-        path: __dirname + '/dist',
+        path: __dirname + '/app',
         filename: 'bundle.js'
     },
     plugins: [
@@ -18,6 +18,7 @@ module.exports = {
 
     module: {
         loaders: [
+            {test: /\.js$/, loader: 'ng-annotate', exclude: /node_modules/, query: {presets: ['es2015']}},
             {test: /\.js$/, loader: 'babel', exclude: /node_modules/, query: {presets: ['es2015']}},
             {test: /\.html$/, loader: 'raw', exclude: /node_modules/},
             {test: /\.css$/, loader: 'style!css', exclude: /node_modules/},
@@ -25,3 +26,10 @@ module.exports = {
         ]
     }
 };
+
+if (process.env.NODE_ENV === 'production') {
+    config.output.path = __dirname + '/dist';
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
+
+module.exports = config;

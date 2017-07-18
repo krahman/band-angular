@@ -12,6 +12,7 @@
   "author": "Khal",
   "devDependencies": {
     "angular-formly": "^7.3.9",
+    "angular-mocks": "^1.6.5",
     "api-check": "^7.5.5",
     "babel": "^6.3.26",
     "babel-core": "^6.3.26",
@@ -26,6 +27,7 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-mocha": "^0.2.1",
     "karma-webpack": "^1.5.0",
+    "ng-annotate-loader": "^0.6.1",
     "nib": "^1.1.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.0",

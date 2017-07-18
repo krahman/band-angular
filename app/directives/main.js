@@ -2,7 +2,7 @@
  * Created by Khal on 18/7/17.
  */
 export default ngModule => {
-    ngModule.directive('main', () => {
+    ngModule.directive('main', ($log) => {
         require('./main.styl');
         return {
             restrict: 'E',
@@ -12,7 +12,8 @@ export default ngModule => {
             controller: function() {
                 const vm = this;
 
-                vm.greeting = 'Hello, there!'
+                vm.greeting = 'Hello, there!';
+                $log.info('vm.greeting');
             }
         };
     });
