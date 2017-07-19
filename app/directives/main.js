@@ -2,7 +2,7 @@
  * Created by Khal on 18/7/17.
  */
 export default ngModule => {
-    ngModule.directive('main', ($log) => {
+    ngModule.directive('main', ($log, $state) => {
         require('./main.styl');
         return {
             restrict: 'E',
@@ -11,9 +11,12 @@ export default ngModule => {
             controllerAs: 'vm',
             controller: function() {
                 const vm = this;
-
-                vm.greeting = 'Hello, there!';
-                $log.info('vm.greeting');
+                vm.goToPost = () => {
+                    $state.go('posts');
+                };
+                vm.goToAudio = function() {
+                    $state.go('audios');
+                }
             }
         };
     });
