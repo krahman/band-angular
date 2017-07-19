@@ -2,12 +2,14 @@
  * Created by Khal on 18/7/17.
  */
 
-const angular = require('angular');
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 
 if (ON_TEST) {
     require('angular-mocks/angular-mocks');
 }
 
-const ngModule = angular.module('app', []);
+const ngModule = angular.module('app', [uiRouter])
+    .config(require('./routes'));
 
 require('./directives').default(ngModule);
