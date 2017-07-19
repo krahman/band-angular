@@ -1,7 +1,7 @@
 /**
  * Created by Khal on 19/7/17.
  */
-module.exports = function($stateProvider, $urlRouterProvider) {
+module.exports = function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('posts', {
             url: '/posts',
@@ -13,5 +13,6 @@ module.exports = function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/audios.html',
             controller:'AudioController'
         });
-    $urlRouterProvider.otherwise('/posts');
+    $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
 };
